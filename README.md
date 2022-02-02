@@ -6,7 +6,7 @@ The dispatch service is a server that allows for the creating of emergencies, tr
 
 This repository contains a Docker Compose file that includes everything you need in order to run the dispatch service. The dispatch service image itself lives on the public Docker registry (see: https://hub.docker.com/r/ssikarim/ufo-dispatch-service).
 
-The Docker Compose file starts two services: a Postgres database and the Dispatch Service. Both of these services are configured using a .env file, which will be described in the following section.
+The Docker Compose file starts two services: a Postgres database and the Dispatch Service. Both of these services are configured using a .env file, which will be described in the following sections.
 
 ## Prerequisites
 This project relies on two dependencies:
@@ -14,7 +14,7 @@ This project relies on two dependencies:
 - [Docker Compose](https://docs.docker.com/compose/)
 
 ## Running the dispatch service
-In order to run the dispatch service, we first need to provide some configuration. This repository contains two environment template files: `database.env.template` and `dispatch.env.template`. What follows is a description of the values in each of these files.
+In order to run the dispatch service, we first need to provide some configuration. This repository contains two environment template files: `database.env.template` and `dispatch.env.template`. What follows is a description of the values in each of these files. Don't forget to remove the `.template` from these files (e.g. rename `dispatch.env.template` to `dispatch.env`).
 
 ### Configuration
 
