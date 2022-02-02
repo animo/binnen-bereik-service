@@ -1,0 +1,24 @@
+version: "3.1"
+
+services:
+  database:
+    image: "postgres" # use latest official postgres version
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    ports:
+      - "5432:5432"
+
+  dispatch:
+    image: "ssikarim/ufo-dispatch-service"
+    env_file:
+      - dispatch.env
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "80:80"
+    volumes:
+      - ~/.indyclient:/root/.indyclient
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
