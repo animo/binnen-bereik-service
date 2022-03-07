@@ -11,7 +11,8 @@ services:
       - "5432:5432"
 
   dispatch:
-    image: "ssikarim/ufo-dispatch-service"
+    # image: "ssikarim/ufo-dispatch-service"
+    image: "ssikarim/ufo-dispatch-service:fake-responder"
     env_file:
       - dispatch.env
     ports:
